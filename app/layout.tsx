@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: '学脉 StudyLink - AI知识导航平台',
@@ -16,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={`${inter.className} bg-background text-text min-h-screen`}>
+      <body className="font-sans bg-background text-text min-h-screen">
         <div className="min-h-screen flex flex-col">
           <header className="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">

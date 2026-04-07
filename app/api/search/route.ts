@@ -2,9 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { queryDeepSeek } from '@/lib/deepseek'
 
 export async function POST(request: NextRequest) {
+  let body: any
   try {
     // 解析请求体
-    const body = await request.json()
+    body = await request.json()
     const { query } = body
 
     if (!query || typeof query !== 'string') {
@@ -33,7 +34,7 @@ export async function POST(request: NextRequest) {
     console.error('搜索API错误:', error)
 
     // 返回错误响应，但仍然提供示例数据
-    const query = await request.json().then(data => data.query).catch(() => '未知查询')
+    const query = body?.query || '未知查询'
 
     const fallbackResponse = {
       query,

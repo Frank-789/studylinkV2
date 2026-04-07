@@ -4,7 +4,7 @@
  */
 
 const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions'
-const API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-1b1de9af40cb41eeaea80fca0861b5e7' // 使用用户提供的API Key作为备用
+const API_KEY = process.env.DEEPSEEK_API_KEY
 
 export interface DeepSeekResponse {
   query: string
@@ -32,7 +32,7 @@ export interface DeepSeekResponse {
 export async function queryDeepSeek(query: string): Promise<DeepSeekResponse> {
   try {
     // 如果提供了API Key，则调用真实的DeepSeek API
-    if (API_KEY && !API_KEY.includes('sk-1b1de9af40cb41eeaea80fca0861b5e7')) {
+    if (API_KEY && API_KEY.trim() !== '') {
       const response = await fetch(DEEPSEEK_API_URL, {
         method: 'POST',
         headers: {

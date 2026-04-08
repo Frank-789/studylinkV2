@@ -19,7 +19,7 @@ npm run dev
 ### 环境配置
 创建 `.env.local` 文件：
 ```env
-DEEPSEEK_API_KEY=sk-1b1de9af40cb41eeaea80fca0861b5e7
+DEEPSEEK_API_KEY=your_key
 ```
 
 ## 🌟 核心功能
